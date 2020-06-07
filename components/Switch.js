@@ -8,7 +8,17 @@ const Switch = ({ checked, label, onChange, ...rest }) => {
   }
 
   return (
-    <div {...rest} onKeyPress={e => (['Enter', ' '].includes(e.key)) && handleClick()} onClick={handleClick} aria-checked={checked}><div><div></div></div></div>
+    <div {...rest} onKeyPress={e => (['Enter', ' '].includes(e.key)) && handleClick()} onClick={handleClick} aria-checked={checked}>
+      <div>
+        <div></div>
+      </div>
+      <svg className='sun' style={{ position: 'absolute', width: 18, left: 4, top: 2, color: 'white' }} viewBox='0 0 24 24'>
+        <path fill='currentColor' d='M3.55,18.54L4.96,19.95L6.76,18.16L5.34,16.74M11,22.45C11.32,22.45 13,22.45 13,22.45V19.5H11M12,5.5A6,6 0 0,0 6,11.5A6,6 0 0,0 12,17.5A6,6 0 0,0 18,11.5C18,8.18 15.31,5.5 12,5.5M20,12.5H23V10.5H20M17.24,18.16L19.04,19.95L20.45,18.54L18.66,16.74M20.45,4.46L19.04,3.05L17.24,4.84L18.66,6.26M13,0.55H11V3.5H13M4,10.5H1V12.5H4M6.76,4.84L4.96,3.05L3.55,4.46L5.34,6.26L6.76,4.84Z' />
+      </svg>
+      <svg className='moon' style={{ position: 'absolute', width: 18, right: 1, top: 2 }} viewBox='0 0 24 24'>
+        <path fill='currentColor' d='M2 12A10 10 0 0 0 15 21.54A10 10 0 0 1 15 2.46A10 10 0 0 0 2 12Z' />
+      </svg>
+    </div>
   )
 }
 
@@ -42,11 +52,32 @@ outline: none;
   background-color: #91b9e4;
   border-color: transparent;
   & > div {
-    transform: translateX(calc(3rem - 1.125rem - 12%));
+    transform: translateX(calc(3rem - 1.125rem - 15%));
     & > div {
       background-color: hsla(211,61%,43%,1);
     }
   }
+}
+
+& > svg {
+  transition: 300ms ease;
+  transition-property: opacity;
+}
+
+&[aria-checked='true'] > .sun {
+  opacity: 1;
+}
+
+&[aria-checked='true'] > .moon {
+  opacity: 0;
+}
+
+&[aria-checked='false'] > .sun {
+  opacity: 0;
+}
+
+&[aria-checked='false'] > .moon {
+  opacity: 1;
 }
 
 /* switch */

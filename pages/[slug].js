@@ -4,13 +4,9 @@ import MainLayout from '../components/MainLayout'
 import { Flex, Box } from '../components/FlexBox'
 import { getAllPosts } from './'
 
-
-
 // import { useRouter } from 'next/router'
 
 const Post = ({ post, blocks }) => {
-
-  console.log('post', post)
   // const router = useRouter()
 
   return (
