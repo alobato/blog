@@ -26,11 +26,7 @@ const Blog = ({ posts }) => {
 
 export default Blog
 
-export async function getStaticProps({ params }) {
+export const getServerSideProps = async () => {
   const posts = await getAllPosts()
   return { props: { posts } }
-}
-
-export async function getStaticPaths() {
-  return { paths: [{ params: {} }], fallback: false }
 }
