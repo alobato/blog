@@ -39,13 +39,13 @@ pre[class*="language-"] {
   padding: 1em;
   margin: .5em 0;
   overflow: auto;
-  background: #262931;
+  background: hsla(240, 7%, 16%, 1);
 }
 :not(pre) > code[class*="language-"] {
   padding: .1em .3em;
   border-radius: .3em;
   color: white;
-  background: #262931;
+  background: hsla(240, 7%, 16%, 1);
 }
 /*********************************************************
 * Tokens
@@ -85,7 +85,7 @@ pre[class*="language-"] {
 .language-css .token.string,
 .style .token.string {
   color: hsla(30, 30%, 55%, 1);;
-  background: #262931;
+  background: hsla(240, 7%, 16%, 1);
 }
 .token.atrule,
 .token.attr-value,
@@ -126,7 +126,7 @@ pre[class*="language-"] > code[class*="language-"] {
   right: 0;
   padding: inherit 0;
   margin-top: 1em;
-  background: #262931;
+  background: hsla(240, 7%, 16%, 1);
   box-shadow: inset 5px 0 0 white;
   z-index: 0;
   pointer-events: none;
