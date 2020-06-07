@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
+// http://k88hudson.github.io/syntax-highlighting-theme-generator/www/
 const prism = `
 pre[class*="language-"],
 code[class*="language-"] {

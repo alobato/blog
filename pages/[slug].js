@@ -1,21 +1,17 @@
 import { NotionRenderer } from 'react-notion'
 import Head from 'next/head'
 import MainLayout from '../components/MainLayout'
+import { Flex, Box } from '../components/FlexBox'
 import { getAllPosts } from './'
 
-import { useRouter } from 'next/router'
 
-import styled from 'styled-components'
-import { space, layout } from 'styled-system'
 
-const Box = styled.div`
-  ${space}
-  ${layout}
-`
+// import { useRouter } from 'next/router'
 
 const Post = ({ post, blocks }) => {
 
-  const router = useRouter()
+  console.log('post', post)
+  // const router = useRouter()
 
   return (
     <MainLayout>
@@ -24,6 +20,10 @@ const Post = ({ post, blocks }) => {
       </Head>
       <Box p={[3, 4]}>
         <h1>{post.title}</h1>
+        <Flex jc='space-between' ai='center'>
+          <Flex><span style={{ fontSize: 15, fontWeight: 200 }}>por Arley Lobato</span></Flex>
+          <Flex><span style={{ fontSize: 15, fontWeight: 200 }}>{post.date.split('-').reverse().join('/')}</span></Flex>
+        </Flex>
         <NotionRenderer blockMap={blocks} />
 
       </Box>
