@@ -3,7 +3,6 @@ import Head from 'next/head'
 import MainLayout from '../components/MainLayout'
 import { getAllPosts } from './'
 
-import { useAppContext } from '../components/AppContext'
 import { useRouter } from 'next/router'
 
 import styled from 'styled-components'
@@ -17,7 +16,6 @@ const Box = styled.div`
 const Post = ({ post, blocks }) => {
 
   const router = useRouter()
-  const { state, setItemState } = useAppContext()
 
   return (
     <MainLayout>
@@ -27,8 +25,6 @@ const Post = ({ post, blocks }) => {
       <Box p={[3, 4]}>
         <h1>{post.title}</h1>
         <NotionRenderer blockMap={blocks} />
-
-        <span onClick={() => setItemState({ theme: state.theme === 'default' ? 'dark' : 'default' })}>tema</span>
 
       </Box>
     </MainLayout>

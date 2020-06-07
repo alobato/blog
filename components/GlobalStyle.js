@@ -160,8 +160,9 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${props => props.theme.primaryFontSize};
     font-weight: ${props => props.theme.primaryFontWeight};
     line-height: ${props => props.theme.primaryLineHeight};
-    color: ${props => props.theme.colors.grey900};
+    color: ${props => props.theme.colors.textColor};
     background-color: ${props => props.theme.colors.bodyBgColor};
+    transition: background-color 300ms linear;
   }
   div {
     -webkit-overflow-scrolling: touch;
