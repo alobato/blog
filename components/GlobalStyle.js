@@ -176,6 +176,10 @@ const GlobalStyle = createGlobalStyle`
     display: block;
   }
 
+  h1, h2, h3, h4 {
+    line-height: 1.4;
+  }
+
 
   [hidden] {
   display: none !important;

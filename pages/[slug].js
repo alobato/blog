@@ -14,11 +14,11 @@ const Post = ({ post, blocks }) => {
       <Head>
         <title>{post.title}</title>
       </Head>
-      <Box p={[3, 4]}>
+      <Box>
         <h1>{post.title}</h1>
         <Flex jc='space-between' ai='center'>
-          <Flex><span style={{ fontSize: 15, fontWeight: 200 }}>por Arley Lobato</span></Flex>
-          <Flex><span style={{ fontSize: 15, fontWeight: 200 }}>{post.date.split('-').reverse().join('/')}</span></Flex>
+          <Flex><span style={{ fontSize: 15, fontWeight: 300, opacity: 0.7 }}>por Arley Lobato</span></Flex>
+          <Flex><span style={{ fontSize: 15, fontWeight: 300, opacity: 0.7 }}>{post.date.split('-').reverse().join('/')}</span></Flex>
         </Flex>
         <NotionRenderer blockMap={blocks} />
 
