@@ -1,5 +1,4 @@
 import React from 'react'
-import Highlight from 'react-highlight.js'
 
 const Lab = ({ posts }) => {
   return (
@@ -27,9 +26,6 @@ const Lab = ({ posts }) => {
         <div style={{ fontFamily: 'Hero New', fontSize: 64, fontWeight: 800 }}>
           ExtraBold
         </div>
-        <Highlight language='javascript'>
-          const a = 'b';
-        </Highlight>
       </div>
 
     </div>
