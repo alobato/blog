@@ -1,9 +1,10 @@
 import React from 'react'
-import { Box } from 'reakit/Box'
-// import { Flex, Box } from '@alobato/flex-box'
-// import styled from 'styled-components/macro'
-// import dynamic from 'next/dynamic'
+import { Box } from '../components/FlexBox'
+import Head from 'next/head'
+import MainLayout from '../components/MainLayout'
+import Link from 'next/link'
 
+// import dynamic from 'next/dynamic'
 // const { Flex, Box } = dynamic(() => import('@alobato/flex-box'), {
   // ssr: false
 // })
@@ -16,11 +17,18 @@ export const getAllPosts = async () => {
 
 const Blog = ({ posts }) => {
   return (
-    <Box>
-      {posts.map(item => (
-        <Box key={item.slug}>{item.title}</Box>
-      ))}
-    </Box>
+    <MainLayout>
+      <Head>
+        <title>arley.dev - Blog</title>
+      </Head>
+      <Box>
+        {posts.map(item => (
+          <Box ta='center' mt={5} key={item.slug}>
+            <Link href={`/${item.slug}`}>{item.title}</Link>
+          </Box>
+        ))}
+      </Box>
+    </MainLayout>
   )
 }
 
