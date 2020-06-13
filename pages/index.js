@@ -24,7 +24,7 @@ const Blog = ({ posts }) => {
       <Box>
         {posts.map(item => (
           <Box ta='center' mt={5} key={item.slug}>
-            <Link href={`/${item.slug}`}>{item.title}</Link>
+            <Link href={`/${item.slug}`}><a>{item.title}</a></Link>
           </Box>
         ))}
       </Box>
